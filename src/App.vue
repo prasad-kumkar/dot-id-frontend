@@ -2,7 +2,7 @@
   <v-app>
     <Header/>
 
-    <v-main>
+    <v-main v-if="user">
     <v-sheet
       id="scrolling-techniques-3"
       class="overflow-y-auto"
@@ -14,6 +14,10 @@
     </v-sheet>
       
     </v-main>
+    <div v-else>
+      <div class="text-h4 ml-10 mt-10">Please connect your wallet</div>
+      <div class="text-subtitle-1 ml-10">You need to connect your wallet account to interact with the app</div>
+    </div>
   </v-app>
 </template>
 
@@ -24,7 +28,11 @@ export default {
   components: {
     Header
   },
-
+  computed: {
+    user(){
+      return this.$store.state.selectedAccount
+    }
+  },
   data: () => ({
     //
   }),

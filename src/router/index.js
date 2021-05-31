@@ -19,9 +19,29 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/vc',
+    name: 'VC',
+    component: () => import('../views/Features/VC.vue')
+  },
+  {
+    path: '/attributes',
+    name: 'Attributes',
+    component: () => import('../views/Features/Attributes.vue')
+  },
+  {
+    path: '/delegates',
+    name: 'Delegates',
+    component: () => import('../views/Features/Delegates.vue')
+  },
+  {
     path: '/identity',
     name: 'Identity',
     component: () => import('../views/Features/Identity.vue')
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue')
   }
 ]
 
